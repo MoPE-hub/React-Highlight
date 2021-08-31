@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# **Highlight 사용방법**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+####위로 뜨길 원하는 컨텐츠의 최상위 부모에 'Highlight' className추가. (main태그X)
 
-In the project directory, you can run:
+####Highlight가 나왔으면 하는 component에 추가 및 원하는 위치에 className추가
+````js
+import Highlight from 'Highlight폴더 상대경로'
 
-### `yarn start`
+const test = () => {
+  return(
+    <React.Fragment>
+      <Highlight HighlightText={"string"} />
+      <div clssName="guide-status">준비중</div>
+      <div clssName="guide-name">아무개</div>
+    </React.Fragment>  
+  )
+}
+````
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+####Highlight-desc 폴더 안에 배열형식의 jsx파일 생성
+````js
+const HighlightT = [
+  {
+    elementClass: 'guide-status',
+    title: '상태',
+    description: 'elementClass는 highlight가 됬으면 하는 부분의 className.'
+  },
+  {
+    elementClass: 'guide-name',
+    title: '이름',
+    description: '다르면 오류발생.'
+  },
+]
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+export default HighlightT
+````
 
-### `yarn test`
+####Highlight-desc 폴더내 index에 위의 파일을 추가
+````js
+// 한개일 때 
+import HighlightT from './HighlightText'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default {HighlightT}
 
-### `yarn build`
+// 두개 이상일 때
+import HighlightT from './HighlightText'
+import HighlightT2 from './HighlightText2'
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default {HighlightT, HighlightT2}
+````
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+###!주의사항
+◦ header, main, footer와 형제인 위치에
+````html
+<div className="dim"></div>
+````
+이 없으면 _에러_
+<br />
+◦ 1번에서 props로 넘어오는 값과 3번에서 export해주는 파일명이 다르면 _에러_<br/>
+◦ 배열에 적은 elementClass와 같은 className이 없으면 _에러_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

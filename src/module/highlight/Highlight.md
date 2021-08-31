@@ -1,16 +1,16 @@
 # **Highlight 사용방법**
 
 
-####위로 뜨길 원하는 컨텐츠의 최상위 부모에 'driver' className추가. (main태그X)
+####위로 뜨길 원하는 컨텐츠의 최상위 부모에 'Highlight' className추가. (main태그X)
 
-####Driver가 나왔으면 하는 component에 추가 및 원하는 위치에 className추가
+####Highlight가 나왔으면 하는 component에 추가 및 원하는 위치에 className추가
 ````js
-import Highlight from 'driver폴더 상대경로'
+import Highlight from 'Highlight폴더 상대경로'
 
 const test = () => {
   return(
     <React.Fragment>
-      <Highlight driverText={"string"} />
+      <Highlight HighlightText={"string"} />
       <div clssName="guide-status">준비중</div>
       <div clssName="guide-name">아무개</div>
     </React.Fragment>  
@@ -18,9 +18,9 @@ const test = () => {
 }
 ````
 
-####driver-desc 폴더 안에 배열형식의 jsx파일 생성
+####Highlight-desc 폴더 안에 배열형식의 jsx파일 생성
 ````js
-const DriverT = [
+const HighlightT = [
   {
     elementClass: 'guide-status',
     title: '상태',
@@ -33,21 +33,21 @@ const DriverT = [
   },
 ]
 
-export default DriverT
+export default HighlightT
 ````
 
-####driver-desc 폴더내 index에 위의 파일을 추가
+####Highlight-desc 폴더내 index에 위의 파일을 추가
 ````js
 // 한개일 때 
-import DriverT from './DriverText'
+import HighlightT from './HighlightText'
 
-export default {DriverT}
+export default {HighlightT}
 
 // 두개 이상일 때
-import DriverT from './DriverText'
-import DriverT2 from './DriverText2'
+import HighlightT from './HighlightText'
+import HighlightT2 from './HighlightText2'
 
-export default {DriverT, DriverT2}
+export default {HighlightT, HighlightT2}
 ````
 
 ###!주의사항

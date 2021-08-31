@@ -4,7 +4,7 @@ import Description from './Description'
 const Index = () => {
   return(
     <React.Fragment>
-      <div className="driver">
+      <div className="Highlight">
         <Description />
       </div>
     </React.Fragment>

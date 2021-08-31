@@ -1,3 +1,3 @@
-import DriverT from './highlightText'
+import HighlightT from './highlightText'
 
-export default {DriverT}
+export default {HighlightT}

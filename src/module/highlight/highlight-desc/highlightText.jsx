@@ -1,4 +1,4 @@
-const DriverT = [
+const HighlightT = [
   {
     elementClass: 'guide-status',
     title: '상태',
@@ -16,4 +16,4 @@ const DriverT = [
   }
 ]
 
-export default DriverT
+export default HighlightT

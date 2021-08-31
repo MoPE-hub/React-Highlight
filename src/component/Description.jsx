@@ -5,7 +5,7 @@ const Description = () => {
 
   return(
     <React.Fragment>
-      <Highlight driverText={"DriverT"} />
+      <Highlight HighlightText={"HighlightT"} />
       <div className="ex-box">
         <div className="guide-status">상태</div>
         <div className="guide-name">이름</div>

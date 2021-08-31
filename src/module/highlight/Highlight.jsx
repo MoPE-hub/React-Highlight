@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
-import DriverTextIndex from "./highlight-desc"
+import HighlightTextIndex from "./highlight-desc"
 
 const Highlight = (props) => {
 
@@ -13,19 +13,19 @@ const Highlight = (props) => {
   })
 
   /**
-   * @props <Highlight driverText={"string"} />
+   * @props <Highlight HighlightText={"string"} />
    * @props string
    * */
-  const driverText = props.driverText
+  const HighlightText = props.HighlightText
 
   const opacityDim = document.getElementsByClassName('dim')
-  const btnBlock = document.getElementsByClassName('driver-description-button-box')
-  const descBlock = document.getElementsByClassName('driver-description-text')
-  const dim = document.getElementsByClassName('driver-highlight-back')
-  const textBox = document.getElementsByClassName('driver-description-box')
+  const btnBlock = document.getElementsByClassName('highlight-description-button-box')
+  const descBlock = document.getElementsByClassName('highlight-description-text')
+  const dim = document.getElementsByClassName('highlight-highlight-back')
+  const textBox = document.getElementsByClassName('highlight-description-box')
 
-  const defaultTarget = document.getElementsByClassName(DriverTextIndex[driverText][0].elementClass)
-  const target = document.getElementsByClassName(DriverTextIndex[driverText][counter.number].elementClass)
+  const defaultTarget = document.getElementsByClassName(HighlightTextIndex[HighlightText][0].elementClass)
+  const target = document.getElementsByClassName(HighlightTextIndex[HighlightText][counter.number].elementClass)
 
   useEffect(() => {
     document.addEventListener('load', function() {
@@ -37,7 +37,7 @@ const Highlight = (props) => {
 
   useEffect(() => {
     if(btnClick.btn === true){
-      target[0].classList.toggle('driver-highlight-text')
+      target[0].classList.toggle('highlight-highlight-text')
     }
   }, [btnClick])
 
@@ -100,7 +100,7 @@ const Highlight = (props) => {
     descBlock[0].style.display = "none"
     textBox[0].style.display = "none"
     dim[0].style.display = "none"
-    target[0].classList.toggle('driver-highlight-text')
+    target[0].classList.toggle('highlight-highlight-text')
   }
 
   const nextButton = () => {
@@ -112,7 +112,7 @@ const Highlight = (props) => {
       ...btnClick,
       btn: true
     })
-    target[0].classList.toggle('driver-highlight-text')
+    target[0].classList.toggle('highlight-highlight-text')
 
     defaultBoxPosition()
   }
@@ -127,49 +127,49 @@ const Highlight = (props) => {
       btn: true
     })
 
-    target[0].classList.toggle('driver-highlight-text')
+    target[0].classList.toggle('highlight-highlight-text')
     defaultBoxPosition()
   }
 
   return (
     <React.Fragment>
-      <div className="driver-box">
-        <div className="driver-start-button">
+      <div className="highlight-box">
+        <div className="highlight-start-button">
           <div>
             <button onClick={() => openButton()} className=""></button>
           </div>
         </div>
       </div>
 
-      <div className="driver-description-box">
-        <div className="driver-description-text">
+      <div className="highlight-description-box">
+        <div className="highlight-description-text">
           <div className="">
             <span className="triangle-white"></span>
-            <div className="driver-title">
+            <div className="highlight-title">
               {
-                DriverTextIndex[driverText][counter.number].title
+                HighlightTextIndex[HighlightText][counter.number].title
               }
             </div>
-            <div className="driver-desc">
+            <div className="highlight-desc">
               {
-                DriverTextIndex[driverText][counter.number].description
+                HighlightTextIndex[HighlightText][counter.number].description
               }
             </div>
           </div>
-          <div className="driver-description-button-box">
-            <div className="driver-description-button">
+          <div className="highlight-description-button-box">
+            <div className="highlight-description-button">
               <div>
-                <button onClick={closeButton} className="btn btn-white driver-highlight-text">닫기</button>
+                <button onClick={closeButton} className="btn btn-white highlight-highlight-text">닫기</button>
               </div>
               <div>
-                <button onClick={prevButton} className="btn btn-white driver-highlight-text m-r-20" disabled={counter.number === 0}>이전</button>
-                <button onClick={nextButton} className="btn btn-white driver-next-button driver-highlight-text" disabled={counter.number === DriverTextIndex[driverText].length - 1}>다음</button>
+                <button onClick={prevButton} className="btn btn-white highlight-highlight-text m-r-20" disabled={counter.number === 0}>이전</button>
+                <button onClick={nextButton} className="btn btn-white highlight-next-button highlight-highlight-text" disabled={counter.number === HighlightTextIndex[HighlightText].length - 1}>다음</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="driver-highlight-back"></div>
+      <div className="highlight-highlight-back"></div>
     </React.Fragment>
   )
 }
