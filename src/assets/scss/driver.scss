@@ -1,0 +1,142 @@
+html,
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: .4rem .7rem;
+  font-size: 1.3rem;
+  font-weight: normal;
+  text-align: center;
+  color: #333333;
+  white-space: nowrap;
+  background-image: none;
+  background-color: transparent;
+  border-radius: .4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-white {
+  color: #7b7d89;
+  background-color: #FFFFFF;
+  border: .1rem solid #CCCCCC;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #cccccc !important;
+  border: .1rem solid #cccccc !important;
+}
+
+.dim {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+  z-index: 11;
+}
+
+.driver { // 위로 뜨길 원하는 컨텐츠의 최상위 부모. (main태그 바로 아래)
+  opacity: 1 !important;
+  z-index: auto !important;
+}
+
+.driver-highlight-text {
+  position: relative !important;
+  color: black;
+  transition: all 0.3s;
+  z-index: 1004 !important;
+}
+
+.driver-highlight-back {
+  display: none;
+  transition: all .3s;
+}
+
+//----------------------//
+
+.driver-box {
+  .driver-start-button {
+    div {
+      button {
+        width: 5rem;
+        height: 5rem;
+        border: .2rem solid #000000;
+        border-radius: 50%;
+        //background: url('../../images/icon-question.png') no-repeat center;
+        background-size: 3rem;
+        &:hover {
+          background-color: #eeeeee;
+          transition: all .2s;
+        }
+      }
+    }
+  }
+}
+
+.driver-description-box {
+  transition: all .3s;
+  border-radius: 10px;
+}
+
+.driver-description-text {
+  display: none;
+  padding: 1rem 2rem;
+}
+
+.driver-start-button {
+  position: fixed;
+  bottom: 10rem;
+  right: 10rem;
+  //z-index: 1003;
+}
+
+.driver-description-button-box {
+  display: none;
+  width: 100%;
+  margin: 5rem 0 1rem 0;
+  .driver-description-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.driver-test {
+  position:absolute;
+}
+
+.driver-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-bottom: .1rem solid #000000;
+}
+
+.driver-desc {
+  padding-top: 1rem;
+  font-size: 1.4rem;
+}
+
+//----------------------//
+
+.ex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 20rem;
+  margin: 0 auto;
+  background: #000000;
+  color: white;
+  div {
+    font-size: 2rem;
+  }
+}
